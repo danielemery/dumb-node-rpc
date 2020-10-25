@@ -19,7 +19,7 @@ export default class ${serviceName}Server extends DumbNodeRPCBaseServer {
     ${services
       .map(
         (service) => `
-    this.addRoute('${service.name}', service.${service.name});`,
+    this.addRoute('/${service.name}', service.${service.name});`,
       )
       .join('')}
   }
