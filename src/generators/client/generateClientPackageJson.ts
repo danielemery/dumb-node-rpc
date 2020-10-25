@@ -18,7 +18,7 @@ export default function packageJsonTemplate(
     "typescript": "^4.0.3"
   },
   "dependencies": {
-    "@danielemeryau/dumb-node-rpc-base-client": "^0.0.3",
+    "@danielemeryau/dumb-node-rpc-base-client": "^0.0.3"
   }
 }`;
 }

@@ -22,7 +22,7 @@ export default function packageJsonTemplate(
     "typescript": "^4.0.3"
   },
   "dependencies": {
-    "@danielemeryau/dumb-node-rpc-base-server": "^0.0.2",
+    "@danielemeryau/dumb-node-rpc-base-server": "^0.0.2"
   }
 }`;
 }

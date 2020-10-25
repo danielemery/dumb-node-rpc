@@ -13,10 +13,11 @@ import generateServerPackageJson from './src/generators/server/generateServerPac
 import generateClientIndex from './src/generators/client/generateClientIndex';
 import hydrateConfiguration from './src/configuration/hydrateConfiguration';
 import generateServerIndex from './src/generators/server/generateServerIndex';
+import generateTsconfigJson from './src/generators/shared/generateTsconfigJson';
 
 const logger = new Logger('rpc-generation-script');
 
-const [,, configPath] = process.argv;
+const [, , configPath] = process.argv;
 
 async function performGeneration() {
   logger.info(`Attempting to read configuration from ${configPath}`);
@@ -45,8 +46,8 @@ async function performGeneration() {
     `${destinationFolder}/server/${typesFileName}`,
     `${destinationFolder}/client/${typesFileName}`,
   );
-  await copyFileToDestinations(
-    `./tsconfig.json`,
+  await writeFileToDestinations(
+    generateTsconfigJson(),
     `${destinationFolder}/server/tsconfig.json`,
     `${destinationFolder}/client/tsconfig.json`,
   );
