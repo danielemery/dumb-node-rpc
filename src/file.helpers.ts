@@ -75,7 +75,6 @@ export async function copyFileToDestinations(
     destinationPaths.map(
       (destinationPath) =>
         new Promise((resolve) => {
-          console.log(`from ${srcPath} to ${destinationPath}`);
           fs.copyFile(srcPath, destinationPath, () => {
             resolve();
           });
