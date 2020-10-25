@@ -23,7 +23,6 @@ export default function packageJsonTemplate(
   },
   "dependencies": {
     "@danielemeryau/dumb-node-rpc-base-server": "^0.0.2",
-    "@danielemeryau/logger": "^0.1.1"
   }
 }`;
 }
