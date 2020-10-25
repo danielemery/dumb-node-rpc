@@ -1,0 +1,13 @@
+{
+  "name": "WidgetService",
+  "sourceFolder": "./samples/input",
+  "destinationFolder": "./samples/output",
+  "services": [
+    {
+      "name": "GetWidgets"
+    },
+    {
+      "name": "FindWidget"
+    }
+  ]
+}
