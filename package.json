@@ -1,6 +1,6 @@
 {
   "name": "@danielemeryau/dumb-node-rpc",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Experiment to generate boilerplate for typescript-typed http rpc calls between node microservices.",
   "scripts": {
     "build": "npx tsc",
