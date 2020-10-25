@@ -11,8 +11,6 @@ export default function packageJsonTemplate(
   "main": "dist/server.js",
   "scripts": {
     "build": "npx tsc",
-    "integration-test": "npx ts-node src/index.ts | npx bunyan",
-    "test": "echo \\"Error: no test specified\\" && exit 1"
   },
   "author": "${author}",
   "license": "${license}",
@@ -22,7 +20,7 @@ export default function packageJsonTemplate(
     "typescript": "^4.0.3"
   },
   "dependencies": {
-    "@danielemeryau/dumb-node-rpc-base-server": "^0.0.3"
+    "@danielemeryau/dumb-node-rpc-base-server": "0.0.4"
   }
 }`;
 }
