@@ -1,4 +1,4 @@
-import { IConfiguration } from '../../configuration.type';
+import { IConfiguration } from '../../configuration/configuration.type';
 
 export default function generateInterfaceFile(
   serviceName: string,
@@ -12,12 +12,10 @@ export default function generateInterfaceFile(
     .concat(
       configuration.services.map((service) => {
         const functionName = service.name;
-        const requestName = service.requestType || `${service.name}Request`;
-        const requestType = `serviceTypes.${requestName}`;
-        const responseName = service.responseType || `${service.name}Response`;
-        const responseType = `serviceTypes.${responseName}`;
+        const requestType = `serviceTypes.${service.requestType}`;
+        const responseType = `serviceTypes.${service.responseType}`;
 
-        return `  ${functionName} (${requestName}: ${requestType}): Promise<${responseType}>;`;
+        return `  ${functionName} (${service.requestType}: ${requestType}): Promise<${responseType}>;`;
       }),
     )
     .concat(['}', '']);
