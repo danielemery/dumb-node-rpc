@@ -3,4 +3,5 @@ export default interface PackageJsonRequirements {
   license: string;
   name: string;
   version: string;
+  dependencies?: { [key: string]: string };
 }

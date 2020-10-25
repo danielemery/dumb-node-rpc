@@ -13,7 +13,7 @@ const configurationSchema = Joi.object<IRawConfiguration>({
   destinationFolder: Joi.string().required(),
   clientNpmPackageName: Joi.string(),
   serverNpmPackageName: Joi.string(),
-  services: Joi.array().items(serviceSchema),
+  services: Joi.array().items(serviceSchema).required(),
 });
 
 export default configurationSchema;

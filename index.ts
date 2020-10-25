@@ -38,6 +38,7 @@ async function performGeneration() {
     author: packageJson.author,
     license: packageJson.license,
     version: packageJson.version,
+    dependencies: packageJson.dependencies,
   };
 
   // Shared

@@ -1,9 +1,13 @@
-import PackageJsonRequirements from "../shared/packageJsonRequirements";
+import PackageJsonRequirements from '../shared/packageJsonRequirements';
 
 export default function packageJsonTemplate(
   requirements: PackageJsonRequirements,
 ) {
-  const { author, license, name, version } = requirements;
+  const { author, dependencies = {}, license, name, version } = requirements;
+  const allDependencies = [
+    ...Object.entries(dependencies),
+    ['@danielemeryau/dumb-node-rpc-base-server', '0.0.4'],
+  ].sort((a, b) => a[0].localeCompare(b[0]));
   return `{
   "name": "${name}",
   "version": "${version}",
@@ -20,7 +24,7 @@ export default function packageJsonTemplate(
     "typescript": "^4.0.3"
   },
   "dependencies": {
-    "@danielemeryau/dumb-node-rpc-base-server": "0.0.4"
+    ${allDependencies.map((dep) => `"${dep[0]}": "${dep[1]}"`).join(',\n    ')}
   }
 }`;
 }
