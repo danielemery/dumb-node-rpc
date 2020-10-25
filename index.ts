@@ -16,7 +16,7 @@ import generateServerIndex from './src/generators/server/generateServerIndex';
 
 const logger = new Logger('rpc-generation-script');
 
-const [, configPath] = process.argv;
+const [,, configPath] = process.argv;
 
 async function performGeneration() {
   logger.info(`Attempting to read configuration from ${configPath}`);
