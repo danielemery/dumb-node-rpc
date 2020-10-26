@@ -13,7 +13,9 @@ export default function generateClientIndex(
 import DumbNodeRPCBaseClient from '@danielemeryau/dumb-node-rpc-base-client';
 
 import I${serviceName} from './I${serviceName}';
-import * as serviceTypes from './${serviceName}.types';
+import * as ${serviceName}Types from './${serviceName}.types';
+
+export { ${serviceName}Types };
 
 export default class ${serviceName}Client implements I${serviceName} {
   private client: DumbNodeRPCBaseClient;
@@ -24,7 +26,7 @@ export default class ${serviceName}Client implements I${serviceName} {
   ${services
     .map(
       (service) => `
-  async ${service.name}(${service.requestType}: serviceTypes.${service.requestType}): Promise<serviceTypes.${service.responseType}> {
+  async ${service.name}(${service.requestType}: ${serviceName}Types.${service.requestType}): Promise<${serviceName}Types.${service.responseType}> {
     return this.client.makeCall('${service.name}', ${service.requestType});
   }`,
     )
