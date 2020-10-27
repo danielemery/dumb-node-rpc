@@ -15,9 +15,7 @@ import DumbNodeRPCBaseServer from '@danielemeryau/dumb-node-rpc-base-server';
 import I${serviceName} from './I${serviceName}';
 import * as ${serviceName}Types from './${serviceName}.types';
 
-export { ${serviceName}Types };
-
-export default class ${serviceName}Server extends DumbNodeRPCBaseServer {
+class ${serviceName}Server extends DumbNodeRPCBaseServer {
   constructor(loggerName: string, port: number, service: I${serviceName}) {
     super(loggerName, port);
     ${services
@@ -28,5 +26,7 @@ export default class ${serviceName}Server extends DumbNodeRPCBaseServer {
       .join('')}
   }
 }
+
+export { ${serviceName}Server, I${serviceName}, ${serviceName}Types };
 `;
 }

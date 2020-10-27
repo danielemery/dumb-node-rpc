@@ -15,9 +15,7 @@ import DumbNodeRPCBaseClient from '@danielemeryau/dumb-node-rpc-base-client';
 import I${serviceName} from './I${serviceName}';
 import * as ${serviceName}Types from './${serviceName}.types';
 
-export { ${serviceName}Types };
-
-export default class ${serviceName}Client implements I${serviceName} {
+class ${serviceName}Client implements I${serviceName} {
   private client: DumbNodeRPCBaseClient;
 
   constructor(apiUrl: string, loggerName: string) {
@@ -32,5 +30,7 @@ export default class ${serviceName}Client implements I${serviceName} {
     )
     .join('\n')}
 }
+
+export { ${serviceName}Client, I${serviceName}, ${serviceName}Types };
 `;
 }
