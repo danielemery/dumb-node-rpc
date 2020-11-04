@@ -15,6 +15,7 @@ jobs:
           paths:
             - dist/*
             - src/*
+            - index.ts
             - package.json
             - package-lock.json
 
