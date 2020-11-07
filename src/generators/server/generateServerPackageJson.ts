@@ -6,7 +6,7 @@ export default function packageJsonTemplate(
   const { author, dependencies = {}, license, name, version } = requirements;
   const allDependencies = [
     ...Object.entries(dependencies),
-    ['@danielemeryau/dumb-node-rpc-base-server', '0.1.1'],
+    ['@danielemeryau/dumb-node-rpc-base-server', '0.2.0'],
   ].sort((a, b) => a[0].localeCompare(b[0]));
   return `{
   "name": "${name}",

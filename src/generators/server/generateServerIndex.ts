@@ -10,14 +10,21 @@ export default function generateServerIndex(
 ) {
   const { serviceName, services } = requirements;
   return `
-import DumbNodeRPCBaseServer from '@danielemeryau/dumb-node-rpc-base-server';
+import DumbNodeRPCBaseServer, { IVersionInfo, IBaseServerOptions } from '@danielemeryau/dumb-node-rpc-base-server';
 
 import I${serviceName} from './I${serviceName}';
 import * as ${serviceName}Types from './${serviceName}.types';
 
 class ${serviceName}Server extends DumbNodeRPCBaseServer {
-  constructor(loggerName: string, port: number, service: I${serviceName}) {
-    super(loggerName, port);
+  constructor(
+    service: I${serviceName},
+    loggerName: string,
+    port: number,
+    versionInfo: IVersionInfo,
+    options?: IBaseServerOptions
+  ) {
+
+    super(loggerName, port, versionInfo, options);
     ${services
       .map(
         (service) => `
@@ -27,6 +34,12 @@ class ${serviceName}Server extends DumbNodeRPCBaseServer {
   }
 }
 
-export { ${serviceName}Server, I${serviceName}, ${serviceName}Types };
+export {
+  ${serviceName}Server,
+  I${serviceName},
+  ${serviceName}Types,
+  IVersionInfo,
+  IBaseServerOptions,
+};
 `;
 }
