@@ -1,3 +1,9 @@
+# Project Archived
+
+If you've ended up here you're probably looking for a good way to do rpc for node. This project was created as a POC before the now-popular [tRPC](https://github.com/trpc/trpc) came into existence and now I would recommend using it instead!.
+
+https://github.com/trpc/trpc
+
 # Dumb Node RPC
 
 Experiment to generate boilerplate for typescript-typed http rpc calls between node microservices.
